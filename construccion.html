@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon - Polar Stocks</title>
+
+    <link rel="icon" href="images/polar-icon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Polar Stocks Colors */
+            --color-primary-light: #FFFFFF;
+            --color-accent: #007BFF;
+            --color-text-dark: #1A2B48;
+            --color-bg-light: #F4F7FA;
+            --color-text-muted: #5C6A7E;
+            --color-border: #E5E9F0;
+
+            /* Polar Stocks Fonts */
+            --font-primary: 'Manrope', 'Inter', sans-serif;
+            --font-secondary: 'Inter', 'Manrope', sans-serif;
+
+            /* Spacing */
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-light);
+            /* Light background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: var(--color-primary-light);
+            padding: var(--spacing-xxl);
+            border-radius: 12px;
+            /* --border-radius */
+            border: 1px solid var(--color-border);
+            box-shadow: 0 8px 20px rgba(26, 43, 72, 0.08);
+            /* --color-shadow-md adjusted */
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto var(--spacing-xl);
+            width: 150px;
+            /* Adjust size as needed */
+            height: auto;
+        }
+
+        h1 {
+            font-family: var(--font-primary);
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--color-text-dark);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .home-link {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 8px 16px;
+            /* --spacing-sm --spacing-md */
+            border: 2px solid var(--color-accent);
+            border-radius: 50px;
+            /* --border-radius-pill */
+            transition: all 0.2s ease;
+        }
+
+        .home-link:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: var(--spacing-xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img class="logo" src="images/polar-logo-horizontal-sl.svg" alt="Polar Stocks Logo">
+
+
+        <h1>Coming Soon!</h1>
+
+        <p>We're currently working hard on building this section of Polar Stocks. Please check back later for updates.
+        </p>
+
+        <a href="/" class="home-link">← Go Back Home</a>
+    </div>
+
+</body>
+
+</html>
