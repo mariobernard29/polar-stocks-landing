@@ -214,7 +214,7 @@ nav {
     right: 0;
     /* Align to right of container */
     top: 50%;
-    transform: translateY(-50%) translateX(20%);
+    transform: translateY(-50%) translateX(0);
     /* Shift slightly off-screen for dynamic look */
     width: 55%;
     height: 70%;
