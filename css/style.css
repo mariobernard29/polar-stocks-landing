@@ -1,0 +1,544 @@
+/* --- CSS VARIABLES (From Brand Manual) --- */
+:root {
+    /* Primary Colors */
+    --polar-blue: #0B5ED7;
+    /*  */
+    --white-ice: #FFFFFF;
+    /* [cite: 40] */
+
+    /* Secondary Colors */
+    --deep-navy: #0A1F33;
+    /*  */
+    --cool-gray: #8FA3B8;
+    /* [cite: 45] */
+
+    /* UI Elements */
+    --glass-bg: rgba(10, 31, 51, 0.7);
+    --glass-border: rgba(143, 163, 184, 0.2);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- GLOBAL RESET & TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /*  */
+    background-color: var(--deep-navy);
+    /*  */
+    color: var(--white-ice);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    /* Rounded corners [cite: 75] */
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--polar-blue);
+    /* Solid primary color [cite: 76] */
+    color: var(--white-ice);
+    border: 1px solid var(--polar-blue);
+    box-shadow: 0 4px 15px rgba(11, 94, 215, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(11, 94, 215, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--white-ice);
+    color: var(--white-ice);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 31, 51, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    height: 40px;
+    width: auto;
+}
+
+/* Logotype Styling [cite: 26] - Modified for Dark Mode  */
+.logo span.brand-polar {
+    color: var(--white-ice);
+}
+
+.logo span.brand-stocks {
+    color: var(--polar-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--cool-gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--polar-blue);
+}
+
+/* Mobile Menu Toggle */
+.mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--white-ice);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+/* Specific hero container styling to handle layout */
+.hero .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Abstract financial visuals / Background Animation  */
+#canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+    /* Ensure text sits above visual */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: var(--polar-blue);
+}
+
+.hero p {
+    color: var(--cool-gray);
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Mock UI Element floating on right */
+.hero-visual {
+    position: absolute;
+    right: 0;
+    /* Align to right of container */
+    top: 50%;
+    transform: translateY(-50%) translateX(20%);
+    /* Shift slightly off-screen for dynamic look */
+    width: 55%;
+    height: 70%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--glass-border);
+    border-radius: 20px 0 0 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    z-index: 1;
+}
+
+.chart-mock {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.bar {
+    width: 100%;
+    background: var(--polar-blue);
+    opacity: 0.8;
+    border-radius: 4px 4px 0 0;
+    animation: grow 2s ease-out forwards;
+}
+
+@keyframes grow {
+    from {
+        height: 0;
+    }
+}
+
+/* --- STOCK TICKER --- */
+.ticker-wrap {
+    width: 100%;
+    background: rgba(11, 94, 215, 0.1);
+    border-top: 1px solid rgba(11, 94, 215, 0.2);
+    border-bottom: 1px solid rgba(11, 94, 215, 0.2);
+    overflow: hidden;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    color: var(--white-ice);
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    /* Tech feel */
+}
+
+.up {
+    color: #4ade80;
+}
+
+.down {
+    color: #f87171;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* --- FEATURES GRID --- */
+.features {
+    padding: 100px 0;
+    background: radial-gradient(circle at 50% 10%, #112a45 0%, var(--deep-navy) 60%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--cool-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 40px 30px;
+    border-radius: 16px;
+    /* Rounded corners [cite: 59] */
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: var(--polar-blue);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(11, 94, 215, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--polar-blue);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--cool-gray);
+    font-size: 0.95rem;
+}
+
+/* --- TECH STACK (AI / Gemini) --- */
+.tech-stack {
+    padding: 100px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.tech-content {
+    flex: 1;
+}
+
+.tech-visual {
+    flex: 1;
+    position: relative;
+}
+
+.ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #0B5ED7 0%, #6f42c1 100%);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Code block simulation */
+.code-block {
+    background: #050f1a;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 25px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.85rem;
+    color: #a5b3ce;
+}
+
+.code-line {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.keyword {
+    color: #c678dd;
+}
+
+.string {
+    color: #98c379;
+}
+
+.function {
+    color: #61afef;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 60px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #050f1a;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand p {
+    color: var(--cool-gray);
+    margin-top: 15px;
+    max-width: 300px;
+    font-size: 0.9rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: var(--cool-gray);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--white-ice);
+}
+
+.copyright {
+    text-align: center;
+    color: var(--cool-gray);
+    font-size: 0.8rem;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .hero-visual {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .tech-flex {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile-toggle {
+        display: block;
+        z-index: 1002;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 31, 51, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .btn.btn-primary {
+        /* Ensure CTA is visible or handle differently, for now hiding in menu or can add to menu */
+    }
+
+    /* Hide the header CTA on mobile or move to menu. 
+       For simplicity, let's keep it in header if space permits, or hide. 
+       The current structure has it inside nav.
+    */
+    nav>.btn {
+        display: none;
+        /* Hide header button on mobile, users can use menu or hero CTA */
+    }
+
+    /* Add CTA to mobile menu if needed via JS or CSS duplication, 
+       but for now simple menu is safer */
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
