@@ -475,21 +475,93 @@ footer {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 900px) {
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .hero .container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero p {
+        max-width: 600px;
+    }
+
     .hero-visual {
-        display: none;
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 600px;
+        height: 300px;
+        border-radius: 20px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+        margin: 15px auto 0;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding: 120px 0 60px;
     }
 
     .hero h1 {
         font-size: 2.8rem;
     }
 
+    .hero-visual {
+        height: 250px;
+    }
+
     .tech-flex {
         flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .tech-content ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
 
-@media (max-width: 600px) {
+/* Small Tablets */
+@media (max-width: 768px) {
     .mobile-toggle {
         display: block;
         z-index: 1002;
@@ -518,27 +590,175 @@ footer {
         font-size: 1.5rem;
     }
 
-    .btn.btn-primary {
-        /* Ensure CTA is visible or handle differently, for now hiding in menu or can add to menu */
-    }
-
-    /* Hide the header CTA on mobile or move to menu. 
-       For simplicity, let's keep it in header if space permits, or hide. 
-       The current structure has it inside nav.
-    */
     nav>.btn {
         display: none;
-        /* Hide header button on mobile, users can use menu or hero CTA */
     }
 
-    /* Add CTA to mobile menu if needed via JS or CSS duplication, 
-       but for now simple menu is safer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .card {
+        padding: 30px 25px;
+    }
+
+    .features {
+        padding: 80px 0;
+    }
+
+    .tech-stack {
+        padding: 80px 0;
+    }
+
+    .code-block {
+        font-size: 0.75rem;
+        padding: 20px;
+        overflow-x: auto;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 100px 0 50px;
+    }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .hero h1 br {
+        display: none;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-visual {
+        height: 200px;
+        padding: 20px;
+    }
+
+    .hero-visual h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-visual h4 {
+        font-size: 0.8rem !important;
+    }
+
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .cta-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features {
+        padding: 60px 0;
+    }
+
+    .tech-stack {
+        padding: 60px 0;
+    }
+
+    .ai-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .tech-content h2 {
+        font-size: 1.5rem;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-col:last-child {
+        grid-column: auto;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        padding: 50px 0 25px;
+    }
+
+    .ticker-item {
+        padding: 0 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .logo-icon {
+        height: 32px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
     }
 }
